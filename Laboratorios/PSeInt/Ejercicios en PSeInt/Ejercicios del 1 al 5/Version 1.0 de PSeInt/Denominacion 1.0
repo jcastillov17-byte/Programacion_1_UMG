@@ -1,0 +1,73 @@
+Algoritmo Denominacion
+	//Definimos el tipo de dato que se utilizara en la variable
+	Definir montoIngresado Como Real
+	Definir cantidadDividida, residuoDeLaDivision Como Entero
+	
+	//Se le pide al usuario que ingrese el monto
+	Escribir 'Ingrese el monto: '
+	Leer montoIngresado
+	
+	//Se usara un condicional donde el monto sea > 0 
+	Si montoIngresado > 0 Entonces
+		//Se multiplicara el monto por 100 para poder sacar los centavos y lo redondeamos 
+		residuoDeLaDivision <- redon(montoIngresado * 100)
+		
+		//Se calcula el billete de a 200
+		cantidadDividida <- trunc(residuoDeLaDivision / 20000)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 20000
+		Escribir "Billete de a 200: ", cantidadDividida
+		
+		//Se calcula el billete de a 100
+		cantidadDividida <- trunc(residuoDeLaDivision / 10000)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 10000
+		Escribir "Billete de a 100: ", cantidadDividida
+		
+		//Se calcula el billete de a 50
+		cantidadDividida <- trunc(residuoDeLaDivision / 5000)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 5000
+		Escribir  "Billete de a 50: ", cantidadDividida
+		
+		//Se calula el billete de a 20
+		cantidadDividida <- trunc(residuoDeLaDivision / 2000)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 2000
+		Escribir  "Billete de a 20: ", cantidadDividida
+		
+		//Se calcula el billete de a 10
+		cantidadDividida <- trunc(residuoDeLaDivision / 1000)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 1000
+		Escribir  "Billete de a 10: ", cantidadDividida
+		
+		//Se calcula el billete de a 5
+		cantidadDividida <- trunc(residuoDeLaDivision / 500)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 500
+		Escribir  "Billete de a 5: ", cantidadDividida
+		
+		//Se calcula el billete de a 1
+		cantidadDividida<- trunc(residuoDeLaDivision / 100)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 100
+		Escribir  "Billete de a 1: ", cantidadDividida
+		
+		//Se calcula la moneda de 50 centavos
+		cantidadDividida <- trunc(residuoDeLaDivision / 50)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 50
+		Escribir  "Moneda de a 50 centavos: ", cantidadDividida
+		
+		//Se calcula la moneda de 10 centavos
+		cantidadDividida <- trunc(residuoDeLaDivision / 10)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 10
+		Escribir  "Moneda de a 10 centavos: ", cantidadDividida
+		
+		//Se calcula la moneda de 5 centavos
+		cantidadDividida <- trunc(residuoDeLaDivision / 5)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 5
+		Escribir  "Moneda de a 5 centavos: ", cantidadDividida
+		
+		//Se calcula la moneda de 1 centavos
+		cantidadDividida <- trunc(residuoDeLaDivision / 1)
+		residuoDeLaDivision <- residuoDeLaDivision MOD 1
+		Escribir  "Moneda de a 1 centavos: ", cantidadDividida
+	SiNo
+		Escribir "Monto no valido"
+	Fin Si
+	
+FinAlgoritmo

@@ -1,0 +1,114 @@
+Algoritmo Calcular_Descuento
+	//Definimos las varibles y el tipo de dato a utilizar
+	Definir edadDelUsuario, sueldoDelUsuario, descuentoDeSueldo, adicionalDeDescuento, totalADescontar Como Real
+	
+	//Inicializamos estas dos varibles para el calculo
+	descuentoDeSueldo <- 0
+	adicionalDeDescuento <- 0
+	
+	//Se utilizo un bucle Do while para que el usuario pueda agregar una edad valido
+	Repetir
+		Escribir "Ingrese su edad: "
+		Leer edadDelUsuario
+		Si edadDelUsuario > 0 Entonces
+			Escribir "Su edad es valido"
+		SiNo
+			Escribir "La edad que desea ingresar no es valido"
+		FinSi
+	Hasta Que edadDelUsuario > 0	
+	
+	//Se utilizo un bucle Do while para que el usuario pueda agregar un sueldo valido
+	Repetir
+		Escribir "Ingrese su sueldo anual: "
+		Leer sueldoDelUsuario
+		Si sueldoDelUsuario > 0 Entonces
+			Escribir "Su sueldo es valido"
+		SiNo
+			Escribir "El sueldo que desea ingresar no es valido"
+		FinSi
+	Hasta Que sueldoDelUsuario > 0
+	
+	//Aqui la condicion es si el usuario tiene 30 años o menos se le agregarara un descuento extra del 20%
+	Si edadDelUsuario <= 30 Entonces
+		//Se calculara el sueldo menor a 10000 y se le descontara el 0.5%
+		Si sueldoDelUsuario < 10000 Entonces
+			descuentoDeSueldo <- sueldoDelUsuario * 0.005
+			adicionalDeDescuento <- descuentoDeSueldo * 0.2
+			totalADescontar <- sueldoDelUsuario - descuentoDeSueldo - adicionalDeDescuento
+			adicionalDeDescuento <- adicionalDeDescuento + descuentoDeSueldo
+			Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+			Escribir "Se le descontara el 0.5% y un extra del el 20%: ", adicionalDeDescuento
+			Escribir "Total: ", totalAdescontar
+		SiNo
+			//Se calculara el sueldo de un rango entre 10000 y 19999 y se le descontara el 1%
+			Si sueldoDelUsuario >= 10000 y sueldoDelUsuario <= 19999 Entonces
+				descuentoDeSueldo <- sueldoDelUsuario * 0.01
+				adicionalDeDescuento <- descuentoDeSueldo * 0.2
+				totalADescontar <- sueldoDelUsuario - descuentoDeSueldo - adicionalDeDescuento
+				adicionalDeDescuento <- adicionalDeDescuento + descuentoDeSueldo
+				Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+				Escribir "Se le descontara el 1% y un extra el 20%: ", adicionalDeDescuento
+				Escribir "Total: ", totalAdescontar
+			SiNo
+				//Se calculara el sueldo de un rango entre 20000 y 29999 y se le descontara el 2%
+				Si sueldoDelUsuario >= 20000 y sueldoDelUsuario <= 29999 Entonces
+					descuentoDeSueldo <- sueldoDelUsuario * 0.02
+					adicionalDeDescuento <- descuentoDeSueldo * 0.2
+					totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo - adicionalDeDescuento
+					adicionalDeDescuento <- adicionalDeDescuento + descuentoDeSueldo
+					Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+					Escribir "Se le descontara el 2% y un extra el 20%: ", adicionalDeDescuento
+					Escribir "Total: ", totalAdescontar
+				SiNo
+					//Se calculara el sueldo mayor a 30000 y se le descontara el 2.5%
+					Si sueldoDelUsuario > 30000 Entonces
+						descuentoDeSueldo <- sueldoDelUsuario * 0.025
+						adicionalDeDescuento <- descuentoDeSueldo * 0.2
+						totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo - adicionalDeDescuento
+						adicionalDeDescuento <- adicionalDeDescuento + descuentoDeSueldo
+						Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+						Escribir "Se le descontara el 2.5% y un extra del 20%: ", adicionalDeDescuento
+						Escribir "Total: ", totalAdescontar
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	//Si la condicion no se cumple no se le descontara el 20% 
+	SiNo
+		Si sueldoDelUsuario < 10000 Entonces
+			//Se calculara el sueldo menor a 10000 y se le descontara el 0.5%
+			descuentoDeSueldo <- sueldoDelUsuario * 0.005
+			totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo
+			Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+			Escribir "Se le descontara el 0.5%: ", descuentoDeSueldo
+			Escribir "Total: ", totalAdescontar
+		SiNo
+			//Se calculara el sueldo de un rango entre 10000 y 19999 y se le descontara el 1%
+			Si sueldoDelUsuario >= 10000 y sueldoDelUsuario <= 19999 Entonces
+				descuentoDeSueldo <- sueldoDelUsuario * 0.01
+				totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo
+				Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+				Escribir "Se le descontara el 1%: ", descuentoDeSueldo
+				Escribir "Total: ", totalAdescontar
+			SiNo
+				//Se calculara el sueldo de un rango entre 20000 y 29999 y se le descontara el 2%
+				Si sueldoDelUsuario >= 20000 y sueldoDelUsuario <= 29999 Entonces
+					descuentoDeSueldo <- sueldoDelUsuario * 0.02
+					totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo
+					Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+					Escribir "Se le descontara el 2%: ", descuentoDeSueldo
+					Escribir "Total: ", totalAdescontar
+				SiNo
+					//Se calculara el sueldo mayor a 30000 y se le descontara el 2.5%
+					Si sueldoDelUsuario > 30000 Entonces
+						descuentoDeSueldo <- sueldoDelUsuario * 0.025
+						totalAdescontar <- sueldoDelUsuario - descuentoDeSueldo
+						Escribir "Su sueldo actual es de: ", sueldoDelUsuario
+						Escribir "Se le descontara el 2.5%: ", descuentoDeSueldo
+						Escribir "Total: ", totalAdescontar
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+FinAlgoritmo
