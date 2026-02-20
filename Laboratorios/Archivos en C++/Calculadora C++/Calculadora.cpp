@@ -55,22 +55,22 @@ int main() {
 					if (numeroDos == 0) {
 						cout << "Error no se puede divir dentro 0" << endl;
 					}
-				} while (numeroDos == 0);
-                resultadoOperaciones = numeroUno/numeroDos;
+				} while (numeroDos != 0);
+                resultadoOperaciones = numeroUno / numeroDos;
 				break;
 			case 3:
 				cout << "Ingrese el primer numero: " << endl;
 				cin >> numeroUno;
 				cout << "Ingrese el sugundo numero: " << endl;
 				cin >> numeroDos;
-				resultadoOperaciones = numeroUno-numeroDos;
+				resultadoOperaciones = numeroUno - numeroDos;
 				break;
 			case 4:
 				cout << "Ingrese el primer numero: " << endl;
 				cin >> numeroUno;
 				cout << "Ingrese el sugundo numero: " << endl;
 				cin >> numeroDos;
-				resultadoOperaciones = numeroUno*numeroDos;
+				resultadoOperaciones = numeroUno * numeroDos;
 				break;
 			case 5:
 				cout << "Ingrese el primer numero: " << endl;
@@ -83,7 +83,7 @@ int main() {
 		} else {
 			cout << "La opción que desea escoger no se encuentra, Intente de nuevo" << endl;
 		}
-	} while (opcionOperaciones >= 1 && opcionOperaciones <= 5);
+	} while (opcionOperaciones >= 1 || opcionOperaciones <= 5);
 
 	cout << "¿Desea agregar otra operación S/N?" << endl;
 	cin >> opcionLetra;
@@ -100,16 +100,16 @@ int main() {
 			cin >> opcionOperaciones;
 			switch (opcionOperaciones) {
 			case 1:
-				resultadoOperaciones = resultadoOperaciones+numeroExtra;
+				resultadoOperaciones = resultadoOperaciones + numeroExtra;
 				break;
 			case 2:
-				resultadoOperaciones = resultadoOperaciones/numeroExtra;
+				resultadoOperaciones = resultadoOperaciones / numeroExtra;
 				break;
 			case 3:
-				resultadoOperaciones = resultadoOperaciones-numeroExtra;
+				resultadoOperaciones = resultadoOperaciones - numeroExtra;
 				break;
 			case 4:
-				resultadoOperaciones = resultadoOperaciones*numeroExtra;
+				resultadoOperaciones = resultadoOperaciones * numeroExtra;
 				break;
 			}
 			cout << "¿Desea finalizar la calculadora S/N?" << endl;
