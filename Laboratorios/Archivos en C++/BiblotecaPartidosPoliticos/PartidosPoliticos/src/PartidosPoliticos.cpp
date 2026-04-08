@@ -1,46 +1,30 @@
-// Ejemplo de utilización de matrices codigo heredado de C
-//Declaraciòn de Bibliotecas y librerias estandar de C++
+#include "PartidosPoliticos.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
-//Declaraciòn de Constantes
-#define NUMERO_PARTIDOS 5
-//define NUMEROVOTOS 5
-#define NUMERO_RONDAS 4
-#define MAX_VOTOS 10000
-#define MIN_VOTOS 0
-#define MAXIMA_LONGITUD_CADENA 100
-//Declaraciòn de Prototipos de Funciòn
-void llamaCiclo();   //Funciòn que controla el Ciclo comparativo de datos por todas las facultades
-int busquedaAleatorios(int minimo, int maximo); //Funciòn que permite obtener valores aleatorios en las notas de cada alumno
-void llenarMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1]); //Funciòn que permite asignar a cada alumno las notas aleatorios
-void imprimirMatrizLinea(); //Funciòn que apoya el despliegue de titulos en el comparativo de facultades
-float imprimirMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1], char partidoPolitico[NUMERO_PARTIDOS][MAXIMA_LONGITUD_CADENA], string nombreDepartamento);
-//Funciòn que permite el despliegue de cada facultad con sus alumnos y el calculo de promedios (menor y mayor)
-int main()
+
+PartidosPoliticos::PartidosPoliticos()
 {
-    srand(getpid()); //Proceso preparativo para generaciòn de valores aleatorios
-    llamaCiclo();
-    return 0;
+    //ctor
 }
-void llamaCiclo()
+
+void PartidosPoliticos::llamarCiclo()
 {
-    //Declaraciòn de matrices por cada facultad
+    //Declaraci�n de matrices por cada facultad
     float matriz_departamento_1[NUMERO_PARTIDOS][NUMERO_RONDAS + 1];
     float matriz_departamento_2[NUMERO_PARTIDOS][NUMERO_RONDAS + 1];
     float matriz_departamento_3[NUMERO_PARTIDOS][NUMERO_RONDAS + 1];
-    char opcion;  //Variable que controla el ciclo de repeticiòn
-    bool repetir = true;  //Variable booleana del ciclo de repeticiòn
-    //Declaraciòn de variables flotantes para el calculo de promedios
+    char opcion;  //Variable que controla el ciclo de repetici�n
+    bool repetir = true;  //Variable booleana del ciclo de repetici�n
+    //Declaraci�n de variables flotantes para el calculo de promedios
     float promedio_departamento_1;
     float promedio_departamento_2;
     float promedio_departamento_3;
-    //Declaraciòn de matriz que almacenarà los nombres de los alumnos
+    //Declaraci�n de matriz que almacenar� los nombres de los alumnos
     char partidoPolitico[NUMERO_PARTIDOS][MAXIMA_LONGITUD_CADENA] = {"Semilla","UNE","VAMOS","CABAL","VOS"};
     //Ciclo repetitivo del comparativo de facultades
     do
@@ -85,59 +69,13 @@ void llamaCiclo()
         }
     } while (repetir);
 }
-int busquedaAleatorios(int minimo, int maximo)
+int PartidosPoliticos::busquedaAleatoria(int maximo, int minimo)
 {
-    //Calculo de valores aleatorios tomando como base la nota minima y màxima del parcial
     return minimo + rand() / (RAND_MAX / (maximo - minimo + 1) + 1);
 }
-
-void llenarMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1])
+float PartidosPoliticos::imprimirMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1], char partidoPolitico[NUMERO_PARTIDOS][MAXIMA_LONGITUD_CADENA], string nombreDepartamento)
 {
-    //Funciòn que permite llenar cada matriz con valores aleatorios
-    int y, x;
-    for (y = 0; y < NUMERO_PARTIDOS; y++)
-    {
-        float suma = 0;
-        int votos = 0;
-        for (x = 0; x < NUMERO_RONDAS; x++)
-        {
-            if (x == 0 || x == 3)  //Calculo del primer parcial o actividades
-            {
-                votos = busquedaAleatorios(MIN_VOTOS, MAX_VOTOS);
-            } else if (x == 1)  //Calculo del segundo parcial
-            {
-                votos = busquedaAleatorios(MIN_VOTOS, MAX_VOTOS);
-            } else if (x == 2)  //Calculo del examen final
-            {
-                votos = busquedaAleatorios(MIN_VOTOS, MAX_VOTOS);
-            }
-            suma += (float)votos;
-            matriz[y][x] = votos;
-            votos=0;
-        }
-        // Agregar promedio al final de la matriz
-
-        matriz[y][NUMERO_RONDAS] = suma;
-    }
-}
-
-void imprimirMatrizLinea()
-{
-    //Funciòn que despliega titulo de cada nota calculada
-    int x;
-
-    cout << "+--------------";
-    for (x = 0; x < NUMERO_RONDAS + 1; x++)
-    {
-        cout << "+--------------";
-    }
-    cout << "+\n";
-}
-float imprimirMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1], char partidoPolitico[NUMERO_PARTIDOS][MAXIMA_LONGITUD_CADENA], string nombreDepartamento)
-{
-    //Funciòn que imprime la matriz en pantalla y realizando los calculos necesarios del promedio
-    int y, x;
-
+    int x, y;
     float promedioMayor = matriz[0][NUMERO_RONDAS];
     float promedioMenor = matriz[0][NUMERO_RONDAS];
     float totalGeneral = 0;
@@ -188,4 +126,45 @@ float imprimirMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1], char part
     cout << "El gandor de este partido es " << partidoPromedioMayor << " con un total de votos de " << promedioMayor << endl;
     cout << "\n" << endl;
     return promedioGeneral; //Retorno del promedio general por facultad
+}
+
+void PartidosPoliticos::imprimirMatrizLinea()
+{
+    int x;
+    cout << "+--------------";
+    for (x = 0; x < NUMERO_RONDAS + 1; x++)
+    {
+        cout << "+--------------";
+    }
+    cout << "+\n";
+}
+
+void PartidosPoliticos::llenarMatriz(float matriz[NUMERO_PARTIDOS][NUMERO_RONDAS + 1])
+{
+    int y, x;
+    for (y = 0; y < NUMERO_PARTIDOS; y++)
+    {
+        float suma = 0;
+        int votos = 0;
+        for (x = 0; x < NUMERO_RONDAS; x++)
+        {
+            if (x == 0 || x == 3)  //Calculo del primer parcial o actividades
+            {
+                votos = busquedaAleatoria(MAX_VOTOS, MIN_VOTOS);
+                //cout << "Maximo de votos: " << votos << endl;
+
+            } else if (x == 1)  //Calculo del segundo parcial
+            {
+                votos = busquedaAleatoria(MAX_VOTOS, MIN_VOTOS);
+            } else if (x == 2)  //Calculo del examen final
+            {
+                votos = busquedaAleatoria(MAX_VOTOS, MIN_VOTOS);
+            }
+            suma += (float)votos;
+            matriz[y][x] = votos;
+            votos=0;
+        }
+        // Agregar promedio al final de la matriz
+        matriz[y][NUMERO_RONDAS] = suma;
+    }
 }

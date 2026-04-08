@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1775661489 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\partidospoliticos\main.cpp
+	"PartidosPoliticos.h"
+
+1775659324 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\partidospoliticos\include\partidospoliticos.h
+	<string>
+
+1775661489 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\partidospoliticos\src\partidospoliticos.cpp
+	"PartidosPoliticos.h"
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iostream>
+	<iomanip>
+
+1775661489 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\biblotecapartidospoliticos\partidospoliticos\main.cpp
+	"PartidosPoliticos.h"
+
+1775659324 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\biblotecapartidospoliticos\partidospoliticos\include\partidospoliticos.h
+	<string>
+
+1775661489 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\biblotecapartidospoliticos\partidospoliticos\src\partidospoliticos.cpp
+	"PartidosPoliticos.h"
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<iostream>
+	<iomanip>
+

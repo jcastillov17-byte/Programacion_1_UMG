@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1774280100 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\calculadoralibrerias\main.cpp
+	<iostream>
+	"Calculadora.h"
+
+1774279789 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\calculadoralibrerias\include\calculadora.h
+
+1774280410 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\calculadoralibrerias\src\calculadora.cpp
+	"Calculadora.h"
+	<iostream>
+
