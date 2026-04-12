@@ -48,7 +48,7 @@ bool Tablero::setModoDesarrollador(bool modoDesarrollador)
 {
     this->modoDesarrollador = modoDesarrollador;//Establecer el modo desarrollador
 }
-string Tablero::getRepresentacionMina(int coordenadaX, int coordenadaY)
+string Tablero::getRepresentacionMina(int coordenadaX, int coordenadaY)//Representa la mina
 {
     Celda celdaTemporal = this->contenidoTablero.at(coordenadaY).at(coordenadaX);
     if (celdaTemporal.getMinaDescubierta() || this->modoDesarrollador)
@@ -73,7 +73,7 @@ string Tablero::getRepresentacionMina(int coordenadaX, int coordenadaY)
         //return ".";
     }
 }
-int Tablero::minasCercanas(int filaTablero, int columnaTablero)
+int Tablero::minasCercanas(int filaTablero, int columnaTablero)//Busca las minas mas cercana
 {
         int contadorTablero = 0;
         int filaInicioTablero, filaFinTablero, columnaInicioTablero, columnaFinTablero;
