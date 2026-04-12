@@ -9,7 +9,6 @@ int main(){
             for (unsigned int k = 1; k <= 4; ++k)
             cout << "*";
 
-            cout << endl;
         }
     }
 
