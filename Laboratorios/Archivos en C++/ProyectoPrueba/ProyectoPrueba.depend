@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1776224507 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectoprueba\main.cpp
+	<iostream>
+	"Jugador.h"
+
+1776224668 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectoprueba\include\jugador.h
+	<iostream>
+	<string>
+

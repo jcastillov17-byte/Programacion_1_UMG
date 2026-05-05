@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1777946194 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\alumnos.cpp
+	"Alumnos.h"
+	"Carrera.h"
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<cstdlib>
+	<ctime>
+	<thread>
+	<chrono>
+	<vector>
+	<iomanip>
+	<conio.h>
+
+1777940250 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\alumnos.h
+	"Carrera.h"
+	<string>
+	<vector>
+
+1777929712 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\main.cpp
+	"Alumnos.h"
+	"Carrera.h"
+	"Curso.h"
+	<iostream>
+	<clocale>
+	<ctime>
+	<vector>
+
+1777594989 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\carrera.cpp
+	"Carrera.h"
+	<iostream>
+	<vector>
+
+1777594989 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\carrera.h
+	<string>
+	<vector>
+
+1777582634 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\curso.cpp
+	"Curso.h"
+	<string>
+	<vector>
+
+1777515998 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\curso.h
+	<string>
+	<vector>
+
