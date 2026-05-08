@@ -26,6 +26,7 @@ class Alumnos
         std::string getfechaNacimientoAlumno();
         std::string getcarnetPersonal();
         std::string getcarreraAsignada();
+        std::string getcontraseniaUnica();
         //Setters
         void setnombreAlumno(std::string nombreAlumno);
         void setapellidoAlumno(std::string apellidoAlumno);
@@ -39,6 +40,7 @@ class Alumnos
         void setcarnetPersonal(std::string carnetPersonal);
         void setnombreCompletoAlumno(std::string nombreCompletoAlumno);
         void setcarreraAsignada(std::string carreraAsignada);
+        void setcontraseniaUnica(std::string contraseniaUnica);
         //Metodos
         void registroDatos();
         void menuRegistro();
@@ -48,6 +50,7 @@ class Alumnos
         void crearCarnetPersonal(std::string codigoCarrera);
         void obtenerNombreCompleto();
         void registroExitoso();
+        void crearContraseniaUnica();
         std::vector<Alumnos> alumnosPrueba();
         //Metodos CRUD
         void menuInsertar();

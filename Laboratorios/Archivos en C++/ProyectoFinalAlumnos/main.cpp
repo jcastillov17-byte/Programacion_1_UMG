@@ -1,6 +1,7 @@
 #include "Alumnos.h"
 #include "Carrera.h"
 #include "Curso.h"
+#include "menuRegistro.h"
 #include <iostream>
 #include <clocale>
 #include <ctime>
@@ -20,7 +21,10 @@ int main()
     vector<Alumnos> obtenerAlumnos = prueba.alumnosPrueba();
 
     Alumnos configurar;
-    configurar.menuInsertar();
+    //configurar.menuInsertar();
+    menuRegistro registroPrincipal;
+    registroPrincipal.menuPrincipalRegistro();
+
 
     /*cout << "Alumno: " << obtenerAlumnos[0].getnombreCompletoAlumno() << endl;
     cout << "Carnet: " << obtenerAlumnos[0].getcarnetPersonal() << endl;

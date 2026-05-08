@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1777946194 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\alumnos.cpp
+1778209477 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\alumnos.cpp
 	"Alumnos.h"
 	"Carrera.h"
 	<iostream>
@@ -14,15 +14,16 @@
 	<iomanip>
 	<conio.h>
 
-1777940250 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\alumnos.h
+1778197116 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\alumnos.h
 	"Carrera.h"
 	<string>
 	<vector>
 
-1777929712 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\main.cpp
+1778207951 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\main.cpp
 	"Alumnos.h"
 	"Carrera.h"
 	"Curso.h"
+	"menuRegistro.h"
 	<iostream>
 	<clocale>
 	<ctime>
@@ -45,4 +46,12 @@
 1777515998 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\curso.h
 	<string>
 	<vector>
+
+1778208628 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\menuregistro.cpp
+	"menuRegistro.h"
+	"Alumnos.h"
+	<iostream>
+	<conio.h>
+
+1778207694 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\menuregistro.h
 

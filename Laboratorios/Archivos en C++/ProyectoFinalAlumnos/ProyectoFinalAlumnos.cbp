@@ -37,10 +37,12 @@
 		<Unit filename="include/Alumnos.h" />
 		<Unit filename="include/Carrera.h" />
 		<Unit filename="include/Curso.h" />
+		<Unit filename="include/menuRegistro.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Alumnos.cpp" />
 		<Unit filename="src/Carrera.cpp" />
 		<Unit filename="src/Curso.cpp" />
+		<Unit filename="src/menuRegistro.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
