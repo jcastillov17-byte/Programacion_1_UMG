@@ -144,48 +144,59 @@ void Curso::insertarCurso()
     cin.ignore();
     system("cls");
 	fstream file;
-	cout << "\n------------------------------------------------------------------------------------------------------------------------";
-	cout << "\n-------------------------------------------------Agregar detalles Persona ---------------------------------------------" << endl;
-	cout << "\t\t\tIngresa codigo del Curso: "; getline(cin, codigoCurso);
-	cout << "\t\t\tIngresa nombre del Curso: "; getline(cin, nombreCurso);
-	cout << "\t\t\tIngresa pre-requisito del curso: "; getline(cin, preRequisitoDeCurso);
+	cout << "\n\t\t-------------------------------------------------------------------------------------------";
+	cout << "\n\t\t----------------------------------Agregar detalles Curso ----------------------------------" << endl;
+	cout << "\t\t\tIngresa codigo del Curso: "; getline(cin, this -> codigoCurso);
+	cout << "\t\t\tIngresa nombre del Curso: "; getline(cin, this -> nombreCurso);
+	cout << "\t\t\tIngresa pre-requisito del curso: "; getline(cin, this -> preRequisitoDeCurso);
+	cout << "\t\t\tIngrese el costo del curso: "; cin >> this -> costoCurso;
+	cin.ignore();
 	file.open("Cursos.txt", ios::app | ios::out);
-	file << std::left<<std::setw(15) << codigoCurso << "| " <<std::left << std::setw(40) << nombreCurso << "| " << std::left << std::setw(15) << preRequisitoDeCurso << "\n";
+	file << std::left<< std::setw(15) << codigoCurso << "|"
+	<< std::left << std::setw(40) << nombreCurso << "|"
+	<< std::left << std::setw(15) << preRequisitoDeCurso << "|"
+	<< std::left << std::fixed << std::setprecision(2) << std::setw(15) << costoCurso << "\n";
 	file.close();
 }
 
-void Curso::desplegarCurso()
-{
-    cin.ignore();
-    system("cls");
-    fstream file;
-    int total = 0;
-    cout << "\n----------------------------------------Tabla de Detalles de Cursos-----------------------------------------" << endl;
-    file.open("Cursos.txt", ios::in);
-    if (!file)
+    void Curso::desplegarCurso()
     {
-        cout << "\n\t\t\t\t No hay información...";
+        cin.ignore();
+        system("cls");
+        fstream file;
+        int total = 0;
+        //Covierte el double a texto
+        string convertirATexto = to_string(costoCurso);
+        cout << "\n\t\t----------------------------------Tabla de Detalles de Cursos----------------------------------" << endl;
+        file.open("Cursos.txt", ios::in);
+        if (!file)
+        {
+            cout << "\n\t\t\t\t No hay información...";
+            file.close();
+        }
+        else
+        {
+            while(getline(file, codigoCurso, '|'))
+            {
+                getline(file, nombreCurso, '|');
+                getline(file, preRequisitoDeCurso, '|');
+                getline(file, convertirATexto);
+                //Vuelve a convertir el texto a double
+                costoCurso = stod(convertirATexto);
+
+                total++;
+                cout << "\n\n\t\t\t Codigo del curso: " << codigoCurso << endl;
+                cout << "\t\t\t Nombre del curso " << nombreCurso << endl;
+                cout << "\t\t\t Pre-requisito del curso: " << preRequisitoDeCurso  << endl;
+                cout << "\t\t\t Costo del curso: " << std::fixed << std::setprecision(2) << costoCurso << endl;
+            }
+            if (total == 0)
+            {
+                cout << "\t\t\t No hay información...";
+            }
+        }
         file.close();
     }
-    else
-    {
-        while(getline(file, codigoCurso, '|'))
-        {
-            getline(file, nombreCurso, '|');
-            getline(file, preRequisitoDeCurso);
-
-            total++;
-            cout << "\n\n\t\t\t Codigo del curso: " << codigoCurso << endl;
-            cout << "\t\t\t Nombre del curso " << nombreCurso << endl;
-            cout << "\t\t\t Pre-requisito del curso: " << preRequisitoDeCurso  << endl;
-        }
-        if (total == 0)
-        {
-            cout << "\t\t\t No hay información...";
-        }
-    }
-    file.close();
-}
 
 void Curso::modificarCurso()
 {
@@ -193,8 +204,9 @@ void Curso::modificarCurso()
     system("cls");
     fstream file,file1;
     string participanteId = "";
+    string convertirATexto = to_string(costoCurso);
     int found = 0;
-    cout << "\n----------------------------------------Modificar Detalles Cursos-----------------------------------------" << endl;
+    cout << "\n\t\t----------------------------------Modificar Detalles Cursos----------------------------------" << endl;
     file.open("Cursos.txt", ios::in);
     if(!file)
     {
@@ -209,21 +221,28 @@ void Curso::modificarCurso()
         while(getline(file, codigoCurso, '|'))
         {
             getline(file, nombreCurso, '|');
-            getline(file, preRequisitoDeCurso);
+            getline(file, preRequisitoDeCurso, '|');
+            getline(file, convertirATexto);
+            costoCurso = stod(convertirATexto);
             //Borra los espacios sobrantes
             codigoCurso = codigoCurso.substr(0, codigoCurso.find_last_not_of(" ") + 1);
             nombreCurso = nombreCurso.substr(0, nombreCurso.find_last_not_of(" ") + 1);
             preRequisitoDeCurso = preRequisitoDeCurso.substr(0, preRequisitoDeCurso.find_last_not_of(" ") + 1);
+            convertirATexto = convertirATexto.substr(0, convertirATexto.find_last_not_of(" ") + 1);
 
             if(participanteId == codigoCurso)
             {
                 cout << "\t\t\tIngresa codigo del Curso: "; getline(cin, codigoCurso);
                 cout << "\t\t\tIngresa nombre del Curso: "; getline(cin, nombreCurso);
                 cout << "\t\t\tIngresa pre-requisito del curso: "; getline(cin, preRequisitoDeCurso);
+                cout << "\t\t\tIngrese el costo del curso: "; cin >> costoCurso;
                 found++;
 
             }
-                file1 << std::left<<std::setw(15) << codigoCurso << "| " << std::left << std::setw(40) << nombreCurso << "| " << std::left << std::setw(15) << preRequisitoDeCurso << "\n";
+                file1 << std::left<< std::setw(15) << codigoCurso << "|"
+                << std::left << std::setw(40) << nombreCurso << "|"
+                << std::left << std::setw(15) << preRequisitoDeCurso << "|"
+                << std::left << std::fixed << std::setprecision(2) << std::setw(15) << costoCurso << "\n";
         }
         file1.close();
         file.close();
@@ -239,30 +258,38 @@ void Curso::buscarCurso()
     system("cls");
     fstream file;
     int found = 0;
+    string convertirATexto = to_string(costoCurso);
     file.open("Cursos.txt", ios::in);
     if(!file)
     {
-        cout << "\n----------------------------------------Datos del Curso Buscado-----------------------------------------" << endl;
+        cout << "\n\t\t----------------------------------Datos del Curso Buscado----------------------------------" << endl;
         cout << "\t\t\t No hay información...";
     }
     else
     {
         string participanteId = "";
-        cout << "\n----------------------------------------Datos del Curso Buscado-----------------------------------------" << endl;
+        cout << "\n\t\t----------------------------------Datos del Curso Buscado----------------------------------" << endl;
         cout << "\n Ingrese el codigo del curso que quiere buscar (000): "; cin >> participanteId;
         while(getline(file, codigoCurso, '|'))
         {
             getline(file, nombreCurso, '|');
-            getline(file, preRequisitoDeCurso);
+            getline(file, preRequisitoDeCurso, '|');
+            getline(file, convertirATexto);
+            costoCurso = stod(convertirATexto);
             //Borra los espacios sobrantes
             codigoCurso = codigoCurso.substr(0, codigoCurso.find_last_not_of(" ") + 1);
             nombreCurso = nombreCurso.substr(0, nombreCurso.find_last_not_of(" ") + 1);
             preRequisitoDeCurso = preRequisitoDeCurso.substr(0, preRequisitoDeCurso.find_last_not_of(" ") + 1);
+            convertirATexto = convertirATexto.substr(0, convertirATexto.find_last_not_of(" ") + 1);
+            costoCurso = stod(convertirATexto);
+            //Vuelve a convertir el texto a double
+
             if (participanteId == codigoCurso)
             {
                 cout << "\n\n\t\t\t Codigo del curso: " << codigoCurso << endl;
                 cout << "\t\t\t Nombre del curso " << nombreCurso << endl;
                 cout << "\t\t\t Pre-requisito del curso: " << preRequisitoDeCurso  << endl;
+                cout << "\t\t\t Costo del curso: " << std::fixed << std::setprecision(2) << costoCurso << endl;
                 found++;
             }
         }
@@ -281,8 +308,9 @@ void Curso::borrarCurso()
     system("cls");
     fstream file,file1;
     string participanteId = "";
+    string convertirATexto = to_string(costoCurso);
     int found = 0;
-    cout << "\n----------------------------------------Detalles del Curso a Borrar-----------------------------------------" << endl;
+    cout << "\n\t\t----------------------------------Detalles del Curso a Borrar----------------------------------" << endl;
     file.open("Cursos.txt", ios::in);
     if(!file){
         cout << "\n\t\t\t\t No hay información..." << endl;
@@ -290,13 +318,19 @@ void Curso::borrarCurso()
     }else{
         cout << "\n Ingrese el codigo del curso que quiere borrar (000): "; cin >> participanteId;
         file1.open("Record.txt", ios::app | ios::out);
-        while(getline(file, codigoCurso, '|')){
-                getline(file, nombreCurso, '|');
-                getline(file, preRequisitoDeCurso);
-                //Borra los espacios sobrantes
-                codigoCurso = codigoCurso.substr(0, codigoCurso.find_last_not_of(" ") + 1);
+        while(getline(file, codigoCurso, '|'))
+        {
+            getline(file, nombreCurso, '|');
+            getline(file, preRequisitoDeCurso, '|');
+            getline(file, convertirATexto);
+            costoCurso = stod(convertirATexto);
+            //Borra los espacios sobrantes
+            codigoCurso = codigoCurso.substr(0, codigoCurso.find_last_not_of(" ") + 1);
             if (participanteId != codigoCurso){
-                file1 << std::left<<std::setw(15) << codigoCurso << "| " <<std::left << std::setw(40   ) << nombreCurso << "| " << std::left << std::setw(15) << preRequisitoDeCurso << "\n";
+                file1 << std::left<< std::setw(15) << codigoCurso << "|"
+                << std::left << std::setw(40) << nombreCurso << "|"
+                << std::left << std::setw(15) << preRequisitoDeCurso << "|"
+                << std::left << std::fixed << std::setprecision(2) << std::setw(15) << costoCurso << "\n";
             }else{
                 found++;
                 cout << "\n\t\t\t\t Borrado de informacion exitoso";
@@ -313,7 +347,6 @@ void Curso::borrarCurso()
 
 }
 
-
 //Getters
 string Curso::getnombreCurso()
 {
@@ -326,6 +359,10 @@ string Curso::getpreRequisitoDeCurso()
 string Curso::getcodigoCurso()
 {
     return this -> codigoCurso;
+}
+double Curso::getcostoCurso()
+{
+    return this -> costoCurso;
 }
 bool Curso::getestadoCurso()
 {
@@ -348,4 +385,8 @@ void Curso::setcodigoCurso(string codigoCurso)
 void Curso::setestadoCurso(bool estadoCurso)
 {
     this -> estadoCurso = estadoCurso;
+}
+void Curso::setcostoCurso(double costoCurso)
+{
+    this -> costoCurso = costoCurso;
 }

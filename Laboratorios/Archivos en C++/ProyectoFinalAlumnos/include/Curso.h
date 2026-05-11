@@ -12,12 +12,14 @@ class Curso
         std::string getnombreCurso();
         std::string getpreRequisitoDeCurso();
         std::string getcodigoCurso();
+        double getcostoCurso();
         bool getestadoCurso();
         //Setters
         void setestadoCurso(bool estadoCurso);
         void setcodigoCurso(std::string codigoCurso);
         void  setnombreCurso(std::string nombreCurso);
         void setpreRequisitoDeCurso(std::string preRequisitoDeCurso);
+        void setcostoCurso(double costoCurso);
         //Metodos
         std::vector<Curso> catalagoCursosIngSistemas();
         void menuCurso();
@@ -33,6 +35,7 @@ class Curso
         std::string nombreCurso;
         std::string preRequisitoDeCurso;
         std::string codigoCurso;
+        double costoCurso;
         bool estadoCurso;
 
 };
