@@ -23,7 +23,9 @@ int main()
     Alumnos configurar;
     //configurar.menuInsertar();
     menuRegistro registroPrincipal;
-    registroPrincipal.menuPrincipalRegistro();
+    //registroPrincipal.menuPrincipalRegistro();
+
+    config.menuCurso();
 
 
     /*cout << "Alumno: " << obtenerAlumnos[0].getnombreCompletoAlumno() << endl;

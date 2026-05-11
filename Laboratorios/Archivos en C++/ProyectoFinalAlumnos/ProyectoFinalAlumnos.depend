@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1778209477 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\alumnos.cpp
+1778211115 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\alumnos.cpp
 	"Alumnos.h"
 	"Carrera.h"
 	<iostream>
@@ -19,7 +19,7 @@
 	<string>
 	<vector>
 
-1778207951 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\main.cpp
+1778458851 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\main.cpp
 	"Alumnos.h"
 	"Carrera.h"
 	"Curso.h"
@@ -38,12 +38,16 @@
 	<string>
 	<vector>
 
-1777582634 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\curso.cpp
+1778461954 source:c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\src\curso.cpp
 	"Curso.h"
 	<string>
 	<vector>
+	<conio.h>
+	<iostream>
+	<fstream>
+	<iomanip>
 
-1777515998 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\curso.h
+1778457371 c:\users\fcast\onedrive\documentos\tercer semestre\programaci”n i\programacion_1_umg\laboratorios\archivos en c++\proyectofinalalumnos\include\curso.h
 	<string>
 	<vector>
 
